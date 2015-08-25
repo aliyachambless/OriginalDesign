@@ -1,6 +1,7 @@
 int rotationNum = 0;
 int ellipseSize = 50;
 int linePlace = 0;
+boolean mouseIsDragging = false;
 void setup()
 {
 	size(400,400);
@@ -64,14 +65,18 @@ void object1()
 		line(400,400,400 -linePlace ,400 -(linePlace* i));
 	}
 
-	linePlace += 1;
-	noStroke();
-	//ellipse(mouseX,mouseY,50,50);
+	if(mouseIsDragging == false){
+		linePlace += 1;
+		noStroke();
+		//ellipse(mouseX,mouseY,50,50);
+	}
+	mouseIsDragging = false;
 }
-void mouseMoved(){
+void mouseDragged(){
 	/*
 	fill((int)(Math.random()*255),255,255);
 	ellipse(mouseX,mouseY,50,50);
 	*/
+	mouseIsDragging = true;
 	linePlace = mouseY;
 }

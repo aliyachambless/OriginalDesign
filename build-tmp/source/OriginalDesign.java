@@ -17,6 +17,7 @@ public class OriginalDesign extends PApplet {
 int rotationNum = 0;
 int ellipseSize = 50;
 int linePlace = 0;
+boolean mouseIsDragging = false;
 public void setup()
 {
 	size(400,400);
@@ -80,15 +81,19 @@ public void object1()
 		line(400,400,400 -linePlace ,400 -(linePlace* i));
 	}
 
-	linePlace += 1;
-	noStroke();
-	//ellipse(mouseX,mouseY,50,50);
+	if(mouseIsDragging == false){
+		linePlace += 1;
+		noStroke();
+		//ellipse(mouseX,mouseY,50,50);
+	}
+	mouseIsDragging = false;
 }
-public void mouseMoved(){
+public void mouseDragged(){
 	/*
 	fill((int)(Math.random()*255),255,255);
 	ellipse(mouseX,mouseY,50,50);
 	*/
+	mouseIsDragging = true;
 	linePlace = mouseY;
 }
   static public void main(String[] passedArgs) {
