@@ -4,7 +4,7 @@ int linePlace = 0;
 void setup()
 {
 	size(400,400);
-	frameRate(4);
+	//frameRate(4);
 }
 void draw()
 {
@@ -26,6 +26,8 @@ void object1()
 	rotationNum ++;
 	ellipseSize = round(random(25,100));
 	*/
+
+	//red lines
 	stroke(255,0,0);
 	for(float i = 0; i < 5; i+= 0.1){
 		line(0,0,linePlace,linePlace* i);
@@ -34,10 +36,42 @@ void object1()
 		line(0,0,linePlace,linePlace* i);
 	}
 
+	//yellow lines
+	stroke(255,255,0);
+	for(float i = 0; i < 5; i+= 0.1){
+		line(400,400,linePlace,linePlace* i);
+	}
+	for(float i = 10; i < 10; i+= 0.5){
+		line(400,400,linePlace,linePlace* i);
+	}
+
+	//green lines
+	stroke(0,255,0);
+	for(float i = 0; i < 5; i+= 0.1){
+		line(0,0,400 -linePlace,400 -(linePlace* i));
+	}
+	for(float i = 10; i < 10; i+= 0.5){
+		line(0,0,400 -linePlace ,400 -(linePlace* i));
+	}
+
+
+	//blue lines
+	stroke(100,100,255);
+	for(float i = 0; i < 5; i+= 0.1){
+		line(400,400,400 -linePlace,400 -(linePlace* i));
+	}
+	for(float i = 10; i < 10; i+= 0.5){
+		line(400,400,400 -linePlace ,400 -(linePlace* i));
+	}
+
 	linePlace += 1;
 	noStroke();
-	ellipse(mouseX,mouseY,50,50);
+	//ellipse(mouseX,mouseY,50,50);
 }
 void mouseMoved(){
+	/*
+	fill((int)(Math.random()*255),255,255);
 	ellipse(mouseX,mouseY,50,50);
+	*/
+	linePlace = mouseY;
 }
