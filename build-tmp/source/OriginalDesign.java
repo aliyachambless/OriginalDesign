@@ -25,12 +25,10 @@ public void setup()
 }
 public void draw()
 {
-	pushMatrix();
-	rotate(rotationNum);
-    object1();
-    popMatrix();
+    strobe1();
+    strobe2();
 }
-public void object1()
+public void strobe1()
 {
 	background(0);
 	/*
@@ -62,6 +60,13 @@ public void object1()
 		line(400,400,linePlace,linePlace* i);
 	}
 
+	if(mouseIsDragging == false){
+		linePlace += 1;
+		noStroke();
+		//ellipse(mouseX,mouseY,50,50);
+	}
+}
+public void strobe2(){
 	//green lines
 	stroke(0,255,0);
 	for(float i = 0; i < 5; i+= 0.1f){
@@ -79,12 +84,6 @@ public void object1()
 	}
 	for(float i = 10; i < 10; i+= 0.5f){
 		line(400,400,400 -linePlace ,400 -(linePlace* i));
-	}
-
-	if(mouseIsDragging == false){
-		linePlace += 1;
-		noStroke();
-		//ellipse(mouseX,mouseY,50,50);
 	}
 }
 public void mouseDragged(){
