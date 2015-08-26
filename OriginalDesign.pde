@@ -70,7 +70,6 @@ void object1()
 		noStroke();
 		//ellipse(mouseX,mouseY,50,50);
 	}
-	mouseIsDragging = false;
 }
 void mouseDragged(){
 	/*
@@ -79,4 +78,7 @@ void mouseDragged(){
 	*/
 	mouseIsDragging = true;
 	linePlace = mouseY;
+}
+void mouseReleased(){
+	mouseIsDragging = false;
 }

@@ -86,7 +86,6 @@ public void object1()
 		noStroke();
 		//ellipse(mouseX,mouseY,50,50);
 	}
-	mouseIsDragging = false;
 }
 public void mouseDragged(){
 	/*
@@ -95,6 +94,9 @@ public void mouseDragged(){
 	*/
 	mouseIsDragging = true;
 	linePlace = mouseY;
+}
+public void mouseReleased(){
+	mouseIsDragging = false;
 }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "OriginalDesign" };
