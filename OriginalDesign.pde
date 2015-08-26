@@ -16,7 +16,7 @@ void draw()
 }
 void object1()
 {
-	background(10, 10, 10, 1);
+	background(0);
 	/*
 	fill(random(0,255),random(0,255),random(0,255));
 	translate(200,200);
