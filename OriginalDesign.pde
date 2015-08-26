@@ -70,9 +70,6 @@ void object1()
 		noStroke();
 		//ellipse(mouseX,mouseY,50,50);
 	}
-	translate(200,200);
-	pointLight(240,240,250,mouseX,mouseY,150);
-	box(100);
 }
 void mouseDragged(){
 	/*
