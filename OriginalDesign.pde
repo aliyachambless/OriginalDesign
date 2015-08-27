@@ -1,6 +1,7 @@
 int rotationNum = 0;
 int ellipseSize = 50;
 int linePlace = 0;
+int direction = 1;
 boolean mouseIsDragging = false;
 void setup()
 {
@@ -45,7 +46,16 @@ void strobe1()
 	}
 
 	if(mouseIsDragging == false){
-		linePlace += 1;
+		if(linePlace > 440)
+		{
+			direction = -1;
+		}
+		if(linePlace < -200)
+		{
+			direction = 1;
+		}
+		linePlace += direction;
+		System.out.println(linePlace);
 		noStroke();
 		//ellipse(mouseX,mouseY,50,50);
 	}
