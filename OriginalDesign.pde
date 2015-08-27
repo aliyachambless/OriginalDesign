@@ -55,7 +55,6 @@ void strobe1()
 			direction = 1;
 		}
 		linePlace += direction;
-		System.out.println(linePlace);
 		noStroke();
 		//ellipse(mouseX,mouseY,50,50);
 	}
